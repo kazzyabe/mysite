@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
-var infoRouter = require('./routes/info')
+var infoRouter = require('./routes/info');
+var posRouter = require('./routes/pos');
 
 var app = express();
 
@@ -21,7 +22,33 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/info', infoRouter)
+app.use('/info', infoRouter);
+app.use('/pos', posRouter)
+// app.get('/pos', hellworld);
+
+// function hellworld(req, res) {
+//   var spawn = require('child_process').spawn;
+//   py = spawn('python', ["./test.py"]);
+//   // ls = spawn('ls')
+//   var dataToSend = 'woooo';
+
+//   py.stdout.on('data', function(data){
+//     console.log("data =", data);
+//     dataToSend = data.toString();
+//   });
+//   py.on('close', (code) => {
+//     console.log(`child process close all stdio with code ${code}`);
+//     // send data to browser
+//     res.send(dataToSend)
+//   });
+//   // py.stdout.on('end', function(){
+//   //     console.log('Sum of numbers=',dataString);
+//   // });
+//   // py.stdin.write(JSON.stringify(data));
+//   // py.stdin.end();
+//   // res.render('pos', { title: dataString });
+// };
+
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
