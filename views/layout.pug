@@ -8,18 +8,13 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     div.top-bar.d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.box-shadow
-      h5.my-0.mr-md-auto.font-weight-normal
-        a(href="/", title="Expresso") Mysite
-      nav.my-2.my-md-0.mr-md-3
+      h5.my-0.mr-md-2.font-weight-normal
+        a(href="/", title="Home") Mysite
+      nav.my-2.my-md-0.mr-md-3.navbar.navbar-light
         a.p-2.text-primary(href="/", title="Home") Home
         a.p-2.text-primary(href="/info", title="info") info
-        a.p-2.text-primary(href="/pos", title="pos") pos
+        //- a.p-2.text-primary(href="/pos", title="pos") pos
 
-        //- if user == undefined
-        //-   a.p-2.text-dark(href="/users/login") Log In / Register
-        //- else
-        //-   a.p-2.text-dark(href="/dashboard") Dashboard
-        //-   a.p-2.text-dark(href="/users/logout") Logout
     .container
       block content
         
